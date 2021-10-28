@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*Varáveis*/
+:root {
+    --cor-prim: #F9D84D;
+    --cor-prim-clara: #FD9CA3;
+    --cor-secun: #F94D58;
+    --cor-secun-clara: #FD9CA3;
+    --cor-fundo: #333333;
+    --cor-fundo-clara: #555555;
+    --cor-texto: #EEEEEE;
+    --fonte-texto: 'IBM Plex Sans', sans-serif;
+    --fonte-titulo: 'Playfair Display', serif;
+}
+/************* CSS reset ********************************/
+* { /*O "*" significa tudo*/
+    font-family: Calibri, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  /*borda faz parte das dimensões do elemento*/
+    /*background-color: var(--cor-fundo);
+    color: var(--cor-texto)*/
+}
+/********************************************************/
+
+body {
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-color: var(--cor-prim);
+    min-height: 50px; /* altura mínima */
+    flex-wrap: wrap; /*força a quebra de linhas entre elementos flex*/
+}
+
+#img-logo {
+    background-color: transparent;
+}
+
+#menu-principal {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-color: var(--cor-secun);
+    min-height: 25px; /* altura mínima */
+    width: 100%;
+    
+}
+
+#menu-principal ul { /* Afeta o <ul> dentro de menu principal */
+    list-style: none; /* Retira decoração dos itens da lista */
+    display: flex; /* Container fçex - todos os itens filho na horizontal por padrão */
+}
+
+#menu-principal ul li{
+    height: 36px;
+    margin: 0 10px; /* 0 topo, fundo; 10px esquerda e direita   */
+    display: flex;
+    background-color: var();
+}
+
+#menu-principal ul li a{
+    font-family: var(--fonte-titulo);
+    display: inline-block; /* Exibe como bloco em linha */
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    background-color: var(--cor-secun); /* Quando passa o mouse sobre o item */
+}
+
+#menu-principal ul li a:hover{ /* Filtro que escurece a cor do item (cor de frente + cor de fundo brightness < 1: escurece > 1 clareia  */
+    filter: brightness(0.8);
+    transition: 300ms;
+}
+
+main {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: stretch; /*filhos com 100% da altura do pai*/
+    min-height: 200px; /* altura mínima */
+    background-color: var(--cor-fundo);
+}
+
+footer {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-color: var(--cor-fundo-clara);
+    min-height: 50px; /* altura mínima */
+}
+
+section {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    flex-direction: column; /*itens filhos em coluna na vertical*/
+    /*border: 1px solid indigo;
+    background-color: plum;*/
+    width: 75%;
+    margin: 20px;   
+}
+
+section h1{ /* Regras para os titulos H1 que estão em section */
+    text-align: left;
+    width: 100%;
+    color: var(--cor-fundo-clara);
+    font-family: var(--fonte-titulo);
+    font-style: italic;
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+}
+
+article > h1 { /* Regras para os titulos H1 que estão em article */
+    text-align: right;
+    width: 100%;
+    color: var(--cor-texto);
+    font-family: var(--fonte-titulo);
+    font-style: italic;
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+}
+
+.cartao-carro {
+    border: 1px solid var(--cor-fundo);
+    width: 300px;
+    height: 360px;
+    margin: 20px;
+    border-radius: 16px;
+    box-shadow: 3px 3px 6px rgba(255,255,255,0.4);
+}
+
+aside {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    border: 1px dashed gray;
+    background-color: lightgray;
+    width: 25%;
+    margin: 5px;
+    }
+
+article {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    /*border: 1px solid sienna;
+    background-color: linen;*/
+    margin: 5px;
+    min-height: 100px;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        /*muda a direção dos filhos para colunas (vertical)*/
+        flex-direction: column;
+        }
+    section {
+        width: 100%;
+    }
+    aside {
+        width: 100%;
+    }
+}
+    
