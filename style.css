@@ -1,216 +1,210 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-/* 
 
-    Cor primaria: #F9D84D 
-    cor primaria clara: #FFE36E
-    cor secundaria: #1B5173
-    cor secundaria clara: #487A9B
-    cor de fundo: #333333
-    cor do texto: #cccccc
-*/
-/* VARIAVEIS */
+/* Variáveis */
 :root {
-    --cor-prim: #F9D84D;
-    --cor-prim-clara: #FFE36E;
-    --cor-secun: #F94D58;
-    --cor-secun-clara:  #FD9CA3;
-    --cor-fundo: #333333;
-    --cor-fundo-clara: #555555;
-    --cor-texto: #cccccc;
-    --fonte-texto: 'IBM Plex Sans', sans-serif;
-    --fonte-titulo: 'Playfair Display', serif;
-    
+  --cor-prim: #F9D84D;
+  --cor-prim-clara: #FFEC9C;
+  --cor-secun: #F94D58;
+  --cor-secun-clara: #FD9CA3;
+  --cor-fundo: #333333;
+  --cor-fundo-clara: #555555;
+  --cor-texto: #EEEEEE;
+  --fonte-texto: 'IBM Plex Sans', sans-serif;
+  --fonte-titulo: 'Playfair Display', serif;
 }
 
-/*Css reset**/
-*{
-    font-family: var(--fonte-texto);
-    padding: 0;
-    margin: 0;
-    box-sizing: unset;
-    background-color: var(--cor--fundo) ;
-    color: var(--cor-texto);
+/************* CSS reset **************************/
+* { /* Todos os elementos */
+  font-family: var(--fonte-texto);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* a borda faz parte das dimensões do elemento */
+  /*background-color: var(--cor-fundo);
+  color: var(--cor-texto);*/
 }
-/*Css reset**/
-
+/*************************************************/
 html {
-    background-color: var(--cor-fundo);
-    font-size: 16px;
+  font-size: 16px;
+  scroll-behavior: smooth; /* Rolagem suave */
 }
-
-header{
-    display: flex;
-    justify-content: center; /*Centralização horizontal*/
-    align-items: center; /*Centralização vertical*/    
-    background-color:var(--cor-prim);
-    min-height: 50px;
-    flex-wrap: wrap;
+header {
+  display: flex;
+  justify-content: center;  /* centralização horizontal */
+  align-items: center;  /* centralização vertical */
+  background-color: rgb(176, 165, 187);
+  min-height: 50px; /* altura mínima */
+  flex-wrap: wrap;  /* força a quebra de linhas entre elementos flex */
 }
-
-#menu-principal{
-    display:flex;     
-    justify-content: center; /*Centralização horizontal*/  
-    align-items: center; /*Centralização vertical*/    
-    background-color: var(--cor-secun);
-    min-height: 25%;
-    width: 100%;
-    margin: 5px;
-    
+#img-logo {
+  background-color: transparent;
 }
-#menu-principal ul {   
-    display: flex;   
-    list-style: none; /* Tira a decoração da lista */   
+#menu-principal {
+  display: flex;
+  justify-content: center;  /* centralização horizontal */
+  align-items: center;  /* centralização vertical */
+  background-color: var(--cor-secun);
+  min-height: 25px; /* altura mínima */
+  width: 100%;
 }
-
+#menu-principal ul { /* Afeta o <ul> dentro de #menu-principal */
+  list-style: none; /* Tira a decoração dos itens da lista */
+  display: flex;  /* Container flex - todos os itens filhos na horizontal por padrão */
+}
 #menu-principal ul li {
-    display: flex;
-    height: 36px;
-    margin: 0 10px; /* 0 topo e fundo, 10px esquerda e direita */   
-    font-family: var(--fonte-titulo);
+  height: 36px;
+  margin: 0 10px; /* 0 topo, fundo; 10px esquerda e direita */
+  display: flex;
 }
-#menu-principal ul li a{   
-    display: flex;    
-    height: 36px;
-    align-items: center; 
-    padding: 0 10px; 
-    background-color: var(--cor-secun);
-    transition: 300ms;
-     
+#menu-principal ul li a {
+  font-family: var(--fonte-titulo);
+  height: 36px;
+  align-items: center;
+  display: flex;
+  padding: 0 10px;
+  color: var(--cor-texto);
+  text-decoration: none; /* Sem sublinhado */
+  background-color: var(--cor-secun);
+  transition: 300ms; /* Afeta a velocidade dos efeitos do hover */
 }
-#menu-principal ul li a:hover{
-    filter: brightness(1.2); /* menor que 0 escurece a cor de fundo, maior que 0 */
+/* Quando o mouse passa sobre o link do menu */
+#menu-principal ul li a:hover {
+  /* Filtro que escurece a cor do item (cor de frente + cor de fundo 
+    brightness < 1: escurece
+    brightness > 1: clareia
+  */
+  filter: brightness(1.2);
 }
-
-main{
-    display: flex;
-    justify-content: center; /*Centralização horizontal*/
-    align-items: stretch; /*Meus filhos tem meu tamanho*/    
-    min-height: 200px;
-    background-color: var(--cor-fundo-clara);
-}
-
-section{
-    display: flex;
-    justify-content: center; /*Centralização horizontal*/
-    align-items: center; /*Centralização vertical*/
-    flex-direction: column;/*filhos em coluna*/    
-    background-color: transparent;
-    min-height: 100%;
-    flex-grow: 3;
-    margin: 20px;
+main {
+  display: flex;
+  justify-content: center;  /* centralização horizontal */
+  align-items: stretch;  /* filhos com 100% da altura do pai */
+  min-height: 200px; /* altura mínima */
+  background-color: rgb(197, 162, 72);
 }
 
-section > h1{
-    text-align: left;
-    width: 100%;
-    font-family: var(--fonte-titulo);
-    font-style: italic;
-    font-size: 2rem;
-    text-shadow: -1px -1px 1px rgb(255, 255, 255, 0.4);
+footer {
+  display: flex;
+  justify-content: space-around;  /* distribui o espaço entre os itens filhos */
+  align-items: center;  /* centralização vertical */
+  background-color: rgb(211, 211, 202);
+  min-height: 50px; /* altura mínima */
+  padding: 20px;
+  color: black;
 }
 
-article{
-    display: flex;
-    justify-content: center; /*Centralização horizontal*/
-    align-items: center; /*Centralização vertical*/    
-    background-color:transparent;
-    margin: 5px;
-    min-height: 50px;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-article h1{
-    text-align: right;
-    font-style: normal;
-    font-size: 1.5rem;
-    font-family: var(--fonte-titulo);
-    width: 100%;
-}
-
-.cartao-carro{
-   
-    border: 1px solid var(--cor-fundo);
-    background: var(--cor-fundo);
-    width: 300px;
-    height: 300px;
-    margin: 20px;
-    border-radius: 16px;
-    box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.15);
-   
-}
-.cartao-carro img{
-    width: 100%;
-    margin-top: 0px;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    width: 300px;
-    height: 220px;
-    
-}
-
-.cartao-carro h1{
-    text-align: left;
-    margin-left: 30px;
-    font-family: var(--fonte-titulo);
-    font-size: 1.75rem;
-    color: var(--cor-prim-clara);
-}
-
-.cartao-carro p {
-   margin-top: 10px;
-   margin-left: 30px;
-}
-
-.cartao-carro a {
-    text-decoration: none;
-}
-
-.cartao-carro a:hover div {
-    filter: brightness(1.2);
-    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.15);
-}
-
-.cartao-carro div {
-    height: 300px;
-    border-radius: 16px;
-}
-
-aside{
-    display: flex;
-    justify-content: center; /*Centralização horizontal*/
-    align-items: center; /*Centralização vertical*/    
-    background-color: var(--cor-fundo-clara);
-    min-height: 100%;
-    flex-grow: 1;
-    margin: 5px;
-}
-
-footer{
-    display: flex;
-    justify-content: space-around; /*  Distribui espaços*/
-    align-items: center; /*Centralização vertical*/ 
-    background-color: var(--cor-fundo);
-    min-height: 50px;
-    padding: 20px;
-}
-
+/* Links dentro do footer */
 footer a {
-    color: var(--cor-prim);
-    text-decoration: none;
+  color: black;
+  text-decoration: none; /* sem sublinhado */
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/*Regras para tela com largura até 600px*/
-@media screen and (max-width: 600px){
-    main{
-        /* Muda a direção dos filhos para coluna vertical*/
-        flex-direction: column;
-    }
-    section, aside{
-        width: 100%;
-    }
+section {
+  display: flex;
+  justify-content: center;  /* centralização horizontal */
+  align-items: center;  /* centralização vertical */
+  flex-direction: column; /* itens filhos em coluna (na vertical) */
+  background-color: transparent;
+  width: 75%;
+  margin: 20px;
+}
+
+/* Regra para o título h1 que está dentro de section */
+section > h1 { /* O sinal de > indica que serão atingidos apenas
+  os h1 FILHOS DIRETOS de section */
+  text-align: left;
+  width: 100%;
+  color: var(--cor-fundo);
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: 2rem;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Regra para os títulos h1 que estão dentro dos articles */
+article > h1 {
+  text-align: center;
+  width: 100%;
+  color: var(--cor-texto);
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+}
+
+/* Classe cartao-carro */
+.cartao-carro {
+  border: 1px solid var(--cor-fundo);
+  background-color: var(--cor-fundo);
+  width: 300px;
+  height: 360px;
+  margin: 20px;
+  border-radius: 16px;
+}
+
+/* Regra para link de .cartao-carro */
+.cartao-carro a {
+  text-decoration: none;  
+}
+
+.cartao-carro a div {
+  transition: 400ms;
+}
+
+/* Regra para o link de .cartao-carro quando o mouse sobrevoa */
+.cartao-carro a:hover div {
+  filter: brightness(1.2);
+  box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.15);
+}
+
+/* Regra para a div interna de .cartao-carro */
+.cartao-carro div {
+  height: 360px;
+  border-radius: 16px;
+}
+
+/* Regra para imagens dentro de .cartao-carro */
+.cartao-carro img {
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.cartao-carro h1 {
+  margin: 20px;
+  font-family: var(--fonte-titulo);
+  font-size: 1.75rem;
+  color: var(--cor-secun);
+}
+
+.cartao-carro p {
+  color: var(--cor-texto);
+  margin: 0 20px;
+}
+
+article {
+  display: flex;
+  justify-content: center;  /* centralização horizontal */
+  flex-wrap: wrap;
+  align-items: center;  /* centralização vertical */
+  background-color: transparent;
+  margin: 5px;
+  min-height: 100px;
+  width: 100%;
+}
+
+/* Regras para tela com largura de até 600px */
+@media screen and (max-width: 600px) {
+
+  main {
+    /* muda a direção dos filhos para coluna (vertical) */
+    flex-direction: column;
+  }
+
+  /* section e aside ficam com 100% de largura */
+  section, aside {
+    width: 100%;
+  }
+
 }
