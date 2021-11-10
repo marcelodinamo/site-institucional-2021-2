@@ -31,7 +31,7 @@ header {
   display: flex;
   justify-content: center;  /* centralização horizontal */
   align-items: center;  /* centralização vertical */
-  background-color: rgb(176, 165, 187);
+  background-color: var(--cor-prim);
   min-height: 50px; /* altura mínima */
   flex-wrap: wrap;  /* força a quebra de linhas entre elementos flex */
 }
@@ -79,22 +79,22 @@ main {
   justify-content: center;  /* centralização horizontal */
   align-items: stretch;  /* filhos com 100% da altura do pai */
   min-height: 200px; /* altura mínima */
-  background-color: rgb(197, 162, 72);
+  background-color: var(--cor-fundo-clara);
 }
 
 footer {
   display: flex;
   justify-content: space-around;  /* distribui o espaço entre os itens filhos */
   align-items: center;  /* centralização vertical */
-  background-color: rgb(211, 211, 202);
+  background-color: var(--cor-fundo);
   min-height: 50px; /* altura mínima */
   padding: 20px;
-  color: black;
+  color: var(--cor-texto);
 }
 
 /* Links dentro do footer */
 footer a {
-  color: black;
+  color: var(--cor-prim);
   text-decoration: none; /* sem sublinhado */
 }
 
@@ -126,7 +126,7 @@ section > h1 { /* O sinal de > indica que serão atingidos apenas
 
 /* Regra para os títulos h1 que estão dentro dos articles */
 article > h1 {
-  text-align: center;
+  text-align: right;
   width: 100%;
   color: var(--cor-texto);
   font-family: var(--fonte-titulo);
@@ -183,6 +183,15 @@ article > h1 {
   margin: 0 20px;
 }
 
+aside {
+  display: flex;
+  justify-content: center;  /* centralização horizontal */
+  align-items: center;  /* centralização vertical */
+  border: 1px dashed dimgray;
+  background-color: lightgrey;
+  width: 25%;
+  margin: 5px;
+}
 article {
   display: flex;
   justify-content: center;  /* centralização horizontal */
