@@ -170,7 +170,7 @@ section > h1 { /* O sinal de > indica que serão atingidos apenas
 }
 
 /* Regra para os títulos h1 que estão dentro dos articles */
-article > h1 {
+section > article > h1 {
   text-align: right;
   width: 100%;
   color: var(--cor-texto);
@@ -240,20 +240,25 @@ aside {
   padding: 16px;
   font-size: 1.2rem;
 }
+
+/* links que estão dentro do aside */
 aside a {
   text-align: center;
   color: var(--cor-prim-clara);
-  text-decoration: none;
+  text-decoration: none; /* tirar subrinhado */
 }
 aside a:hover {
+  color: var(--cor-prim);
   text-decoration: underline;
 }
+
+/* Articles que estão dentro do aside */
 aside article{
   text-align: center;
   margin:  50px 0;
-  padding: 30px 0;
+  padding: 30px 20px;
   border: 3px groove var(--cor-texto); 
-  border-radius: 15px;   
+  border-radius: 8px;   
 }
 article {
   display: flex;
